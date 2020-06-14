@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+                    script {
+                        try {
+                            echo 'exit 1'
+                            sh 'exit 1'
+                        }
+                        catch (exc) {
+                            echo 'There was a problem'
+                        }
+                    }
+                }
+            }
+        }
+    }

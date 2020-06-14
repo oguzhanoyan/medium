@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+     script {
+                    if (env.BRANCH_NAME == 'master') {
+                                echo 'Master branchindeyim'
+                            } else {
+                                echo 'Master branchinde değilim'
+                            }
+                    }
+                }
+            }
+        }
+    }
