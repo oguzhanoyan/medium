@@ -1,0 +1,17 @@
+pipeline{
+    agent none
+    stages{
+        stage('Build'){
+            
+            parallel{
+                stage('Stage icerisindeki ilk parallel stagei'){
+                    steps{echo 'Hello Stage 1 '}
+                }
+                stage('Stage icerisindeki ikinci parallel stagei'){
+                    steps{echo 'Hello World 2' }
+                }                
+            }
+            
+        }
+    }
+}
